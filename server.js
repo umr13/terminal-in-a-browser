@@ -206,9 +206,10 @@ wss.on('connection', (ws) => {
 
       if (msg.type === 'local') {
         const shell = process.env.SHELL || (process.platform === 'win32' ? 'cmd.exe' : 'bash');
+        const shellArgs = process.platform === 'win32' ? [] : ['-l'];
         const { cols, rows } = clampDims(msg.cols, msg.rows);
 
-        ptyProcess = pty.spawn(shell, [], {
+        ptyProcess = pty.spawn(shell, shellArgs, {
           name: 'xterm-256color',
           cols,
           rows,

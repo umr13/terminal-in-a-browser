@@ -335,13 +335,13 @@ body::after {
   flex: 1;
   position: relative;
   overflow: hidden;
-  background: #000;
+  background: #282a36;
 }
 
 .term-wrapper {
   position: absolute;
   inset: 0;
-  padding: 4px;
+  padding: 8px 12px;
   display: none;
 }
 

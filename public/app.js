@@ -66,19 +66,26 @@
     // xterm instance
     const term = new Terminal({
       cursorBlink: true,
-      fontSize: 14,
-      fontFamily: "'JetBrains Mono', 'Cascadia Code', 'Fira Code', Menlo, monospace",
+      cursorStyle: 'block',
+      fontSize: 15,
+      lineHeight: 1.25,
+      letterSpacing: 0.3,
+      fontFamily: "'IBM Plex Mono', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', Menlo, monospace",
+      // Dracula theme
       theme: {
-        background: '#0d0d0d',
-        foreground: '#e0e0e0',
-        cursor: '#e0e0e0',
-        selectionBackground: '#3a7bd550',
-        black: '#1a1a1a', red: '#e06c75', green: '#98c379',
-        yellow: '#e5c07b', blue: '#61afef', magenta: '#c678dd',
-        cyan: '#56b6c2', white: '#abb2bf',
-        brightBlack: '#5c6370', brightRed: '#e06c75', brightGreen: '#98c379',
-        brightYellow: '#e5c07b', brightBlue: '#61afef', brightMagenta: '#c678dd',
-        brightCyan: '#56b6c2', brightWhite: '#ffffff'
+        background:          '#282a36',
+        foreground:          '#f8f8f2',
+        cursor:              '#ff79c6',
+        cursorAccent:        '#282a36',
+        selectionBackground: 'rgba(68,71,90,0.85)',
+        black:         '#21222c', red:     '#ff5555',
+        green:         '#50fa7b', yellow:  '#f1fa8c',
+        blue:          '#bd93f9', magenta: '#ff79c6',
+        cyan:          '#8be9fd', white:   '#f8f8f2',
+        brightBlack:   '#6272a4', brightRed:     '#ff6e6e',
+        brightGreen:   '#69ff94', brightYellow:  '#ffffa5',
+        brightBlue:    '#d6acff', brightMagenta: '#ff92df',
+        brightCyan:    '#a4ffff', brightWhite:   '#ffffff',
       }
     });
 
