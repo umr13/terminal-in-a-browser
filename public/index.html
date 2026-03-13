@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminal — Login</title>
+  <link rel="icon" type="image/svg+xml" href="terminal-icon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+  <div class="login-card">
+    <div class="login-header">
+      <img src="terminal-icon.svg" alt="" class="login-icon">
+      <div class="login-title">Terminal</div>
+      <div class="login-subtitle">Secure Access</div>
+    </div>
+    <div class="login-divider"></div>
+    <form method="POST" action="login">
+      <label class="field-label" for="password">Password</label>
+      <div class="prompt-wrap">
+        <span class="prompt-glyph">›</span>
+        <input type="password" id="password" name="password"
+               autofocus autocomplete="current-password"
+               placeholder="enter password">
+      </div>
+      <button type="submit" class="btn-login">Authenticate</button>
+    </form>
+    <script>
+      if (new URLSearchParams(location.search).get('error')) {
+        const msg = document.createElement('div');
+        msg.className = 'login-error';
+        msg.textContent = 'Invalid credentials';
+        document.querySelector('form').prepend(msg);
+      }
+    </script>
+  </div>
+</body>
+</html>

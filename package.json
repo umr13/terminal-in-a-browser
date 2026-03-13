@@ -1,0 +1,20 @@
+{
+  "name": "terminal-in-a-browser",
+  "version": "1.0.0",
+  "description": "Web-based terminal with local shell and SSH support",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cookie": "^0.7.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "memorystore": "^1.6.7",
+    "node-pty": "^1.0.0",
+    "ssh2": "^1.15.0",
+    "ws": "^8.17.0"
+  }
+}
