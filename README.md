@@ -19,11 +19,16 @@ node server.js
 
 ### `.env`
 
+`TERM_PASSWORD` and `SESSION_SECRET` are **required** — the server will refuse to start without them.
+
 ```
-TERM_PASSWORD=yourpassword
-SESSION_SECRET=yoursecret
+TERM_PASSWORD=yourpassword        # required
+SESSION_SECRET=yoursecret         # required
 PORT=8081
-BASE_PATH=/example   # optional, if behind a reverse proxy
+BASE_PATH=/example                # optional, if behind a reverse proxy
+ALLOWED_ORIGIN=https://example.com  # optional, locks WebSocket to a specific origin
+MAX_TABS=10                       # optional, max terminal tabs per session (default: 10)
+NODE_ENV=production               # optional, enforces HTTPS-only session cookies
 ```
 
 ## Running with PM2

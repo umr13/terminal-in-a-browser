@@ -25,14 +25,7 @@
       </div>
       <button type="submit" class="btn-login">Authenticate</button>
     </form>
-    <script>
-      if (new URLSearchParams(location.search).get('error')) {
-        const msg = document.createElement('div');
-        msg.className = 'login-error';
-        msg.textContent = 'Invalid credentials';
-        document.querySelector('form').prepend(msg);
-      }
-    </script>
+    <script src="login.js"></script>
   </div>
 </body>
 </html>
