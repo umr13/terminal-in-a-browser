@@ -23,6 +23,7 @@ if (!process.env.SESSION_SECRET) {
 }
 
 const app = express();
+app.set('trust proxy', 1); // nginx terminates SSL; trust X-Forwarded-Proto for req.secure
 const server = http.createServer(app);
 
 const PORT = process.env.PORT || 7681;
@@ -108,7 +109,10 @@ app.post('/login', loginLimiter, (req, res) => {
     req.session.regenerate((err) => {
       if (err) return res.redirect(BASE_PATH + '/?error=1');
       req.session.authenticated = true;
-      res.redirect(BASE_PATH + '/terminal');
+      req.session.save((saveErr) => {
+        if (saveErr) return res.redirect(BASE_PATH + '/?error=1');
+        res.redirect(BASE_PATH + '/terminal');
+      });
     });
   } else {
     res.redirect(BASE_PATH + '/?error=1');
